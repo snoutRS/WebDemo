@@ -1,0 +1,11 @@
+<script src="jquery.js"></script>
+<script>
+	$(function () {
+		$("#box>ul>li").mouseover(function () {
+			$(this).css("width","800px").siblings("li").css("width","100px");
+		});
+		$("#box>ul>li").mouseout(function () {
+			$("#box>ul>li").css("width","240px");
+		});
+	});
+</script>
