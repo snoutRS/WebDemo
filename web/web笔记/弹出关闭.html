@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>元素显隐</title>
+	<style>
+      *{
+      	padding: 0px;
+      	margin: 0px;
+      }
+	  #dg{
+		  display: none;
+	  }
+	</style>
+	<script>
+		window.onload=function(){
+			var btn=document.getElementById("btn");
+			var gb=document.getElementById("gb");
+			var dg=document.getElementById("dg");
+			btn.onclick=function(){
+				dg.style.display='block';
+				dg.style.width='200px'
+				dg.style.height='200px'
+				dg.style.border='1px solid red'
+			}
+			gb.onclick=function(){
+				dg.style.display='none';
+			}
+		}
+	</script>
+</head>
+<body>	
+ <input type="button" id="btn" value="点击我"/>
+ <br/><br/>
+ <div id="dg">
+	<input type="button" id="gb" value="关闭"/>
+ </div>
+</body>
+</html>
