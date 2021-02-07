@@ -1,0 +1,17 @@
+<script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			var c=0
+			setInterval(function(){
+				var newtop=0
+				c++
+				if(c==5){
+					$('#hz ul').css({'top': '0px'})
+					newtop=0+'px'
+					c=0
+				}
+				newtop=-40*c
+				$('#hz ul').stop().animate({'top':newtop+'px'},300)
+			},3000)
+		})
+	</script>
