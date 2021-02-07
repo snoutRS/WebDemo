@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>元素显隐toggle方法</title>
+	<style>
+      *{
+      	padding: 0px;
+      	margin: 0px;
+      }
+	</style>
+<!-- 	<script>
+		window.onload=function(){
+			var btn=document.getElementById("btn");
+			var dg=document.getElementById("dg");
+			btn.onclick=function(){
+				dg.style.display='none';
+			}
+		}
+	</script> -->
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+     $(function(){
+     	$('#btn').click(function(){
+             // $('#dg').css({'display':'none'});
+             //$('#dg').hide();
+             //自动控制元素显隐
+             $('#dg').toggle();
+     	});
+     })
+	</script>
+	
+         
+	
+</head>
+<body>	
+ <input type="button" id="btn" value="点击我"/>
+ <br/><br/>
+ <img src="images/ad.gif" id="dg">
+
+	
+</body>
+</html>
