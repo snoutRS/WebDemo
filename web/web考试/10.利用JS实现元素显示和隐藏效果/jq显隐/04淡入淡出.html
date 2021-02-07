@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>淡入淡出效果</title>
+	<style>
+      *{
+      	padding: 0px;
+      	margin: 0px;
+      }
+	</style>
+
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+     $(function(){
+     	$('#btn').click(function(){
+          //$('#dg').fadeOut(2000);
+          // 回调函数会在动画执行完毕后被调用
+     	  // $('#dg').fadeOut(2000, function() {
+
+     	  // 	alert('动画执行完毕');
+     	  	
+     	  // });
+
+     	  //自动控制淡入淡出显隐
+            $('#dg').fadeToggle();
+     	});
+     })
+	</script>
+	
+         
+	
+</head>
+<body>	
+ <input type="button" id="btn" value="点击我"/>
+ <br/><br/>
+ <img src="images/ad.gif" id="dg">
+ <h1>图片淡入淡出，通过透明度的变化</h1>
+
+	
+</body>
+</html>
