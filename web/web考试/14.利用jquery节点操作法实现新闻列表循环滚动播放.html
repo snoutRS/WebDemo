@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>新闻标题无缝循环</title>
+	<style>
+		*{
+			padding: 0px;
+			margin: 0px;
+		}
+		#hz{
+			width: 300px;
+			height: 40px;
+			border: 1px solid blue;
+			margin: 200px auto;
+			position: relative;
+			/*overflow: hidden;*/
+		}
+		#hz ul{
+			position: absolute;
+			bottom: -40px;
+			left: 0px;
+		}
+		#hz ul li{
+			list-style: none;
+			width: 300px;
+			height: 40px;
+			text-align: center;
+			line-height: 40px;
+			color: black;
+		}
+	</style>
+	<script src="jquery.js"></script>
+	<script>
+		$(function(){
+			setInterval(function(){
+               //让第一个li高度变为0
+               //$("#hz ul li").first().height(0);
+               // 将第一个li追加到ul的最后
+               //$("#hz ul").append($("#hz ul li").first());
+               // 让最后一个li高度逐渐变为40
+               //$("#hz ul li").last().animate({'height':'40px'},500);
+               // 用一句话实现
+               $("#hz ul").append($("#hz ul li").first().height(0).animate({'height':'40px'},500));
+			},1000)
+		})
+	</script>
+</head>
+<body>
+	 <div id="hz">
+	 	<ul>
+	 		<li style="background:blue;">MC韩雅乐中国蓝战歌</li>
+	 		<li style="background:red;">MC高迪毕业季</li>
+	 		<li style="background:orange;">MC小洲2017经典语录3</li>
+	 		<li style="background:pink;">MC安可儿柯镇恶红颜墓</li>
+	 		<li style="background:green;">MC高迪另类说唱从你的全世界路过</li>
+	 	</ul>
+	 </div>
+</body>
+</html>

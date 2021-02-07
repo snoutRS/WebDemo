@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="https://www.baidu.com/" method="get">
+			邮箱：<input type="email" name="email"/><br>
+			网址：<input type="url" name="url"/><br>
+			日期：<input type="date" name="date"/><br>
+			<input type="time" name="time" /><br>
+			<input type="month"  name="month"/><br>
+			<input type="week"  name="week"/><br>
+			<input type="datetime" name="datetime"/><br>
+			<input type="datetime-local" name="datetime-local" /><br>
+			<input type="number" name="number"/ max="10" min="0" step="2" value="4"><br>
+			<input type="range" name="range" max="10" min="0" step="5"/><br>
+			<input type="search"  results=s name="serch" placeholder="百度一下" /><br>
+			<input type="tel" name="tel" required="required" pattern="^[a-z]\w{2,5}$" autofocus="true" autocomplete="on"/><br>		
+			<!-- required="required"为必填 -->  <!-- autocomplete="on"账号提示 -->
+			<input type="color" name="color"/><br>
+			插入图片：<input type="file" name="img" multiple="multiple"/><br>
+			年龄：<input type="text" list="liage"/><br>
+					<datalist id="liage">
+						<option >18</option>
+						<option >28</option>
+						<option >38</option>
+					</datalist>
+			<input type="submit" value="提交" formaction="https://www.baidu.com/"/>
+			男<input type="radio"  name="user_name"/>女<input type="radio"  name="user_name"/>
+		</form>
+	</body>
+</html>

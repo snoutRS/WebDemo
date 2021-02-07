@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="OK.html" method="post" onsubmit="return check()">
+			<p>名字：<input type="text" name="mz" value="朱亨" /></p>
+			<p>密码：<input type="password" name="mm" /></p>
+			<p>再次输入密码：<input type="password" name="mm2" /></p>
+			<p>电子邮箱：<input type="text" name="yx" /></p>
+			<p>性别：<input type="radio" name="xb" />男 <input type="radio" name="xb" />女</p>
+			<p>爱好：<input type="checkbox" />运动 <input type="checkbox" />看电影 <input type="checkbox" />听歌</p>
+			<select><!-- 下拉框 -->
+			  <option value="volvo">Volvo</option>
+			  <option value="saab">Saab</option>
+			  <option value="opel">Opel</option>
+			  <option value="audi">Audi</option>
+			</select>
+			<input type="time" />
+			
+			
+			
+			<button type="submit">提交</button>
+		</form>
+		<script type="text/javascript">
+			function check(){
+				if(document.getElementsByName("mz")[0].value==""){
+					alert("请输入用户名！");
+					return false;
+				}
+				if(document.getElementsByName("mm")[0].value.length<6){
+					alert("密码不能小于6位！");
+					return false;
+				}
+				if(document.getElementsByName("mm2")[0].value!=document.getElementsByName("mm")[0].value){
+					alert("密码不一致！");
+					return false;
+				}
+				var email=document.getElementsByName("yx")[0].value;
+				if(email.indexOf('@')==-1 || email.indexOf('.com')==-1 || email.indexOf('.com')-email.indexOf('@')<=1 || email.indexOf('@')<1){
+					alert("邮箱格式不正确！");
+					return false;
+				}
+				if (!document.getElementsByName("xb")[0].checked && !document.getElementsByName("xb")[1].checked) {
+				 alert("请选择性别");
+				 return false;
+				 }
+				 return true;
+			}
+		</script>
+	</body>
+</html>

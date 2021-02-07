@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+
+        }
+
+        #list{
+            width:300px;
+            border:1px solid #ccc;
+            border-radius: 0px 0px 10px 0px;
+            box-shadow: #cccccc 5px 5px 3px;
+             }
+        h3{
+            height:24px;
+            background-color: #ccc;
+            line-height:24px;
+            font-size:14px;
+            padding-left: 10px;
+        }
+        ul li{
+            border-bottom: 1px dotted #ccc;
+            line-height: 24px;
+            color:#333;
+            font-size:12px;
+            padding-left:10px;
+        }
+        ul li span{
+            width:20px;
+            height:20px;
+            background-color: #f93;
+            text-align:center;
+            line-height: 20px;
+            margin-right: 10px;
+        }
+        ul li:hover{
+            background-color: #f90;
+            color:#00f;
+        }
+        ul li dl{
+            padding-left:30px;
+            display:none;
+        }
+    </style>
+    <script>
+        window.onload=function() {
+            var list = document.getElementById("list");
+            var olis = list.getElementsByTagName("li");
+            var odls = list.getElementsByTagName("dl");
+            for (var i = 0; i < olis.length; i++) {
+                olis[i].id = i;
+                olis[i].onmouseover = function () {
+                    odls[this.id].style.display = "block";
+                }
+                olis[i].onmouseout = function () {
+                    odls[this.id].style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+<nav id="list">
+    <h3>2015年浙江省热门旅游地排行榜</h3>
+    <ul>
+        <li><span>☆</span><a href="#">横店影视城</a>
+            <dl>
+                <dd>AAAAA级景区</dd>
+                <dd>地址：浙江省金华市东阳市横店镇横店影视城</dd>
+                <dd>价格：40元起</dd>
+            </dl>
+        </li>
+        <li><span>☆</span><a href="#">溪口风景区</a>
+            <dl>
+                <dd>AAAAA级景区</dd>
+                <dd>地址：浙江省宁波市奉化市溪口镇</dd>
+                <dd>价格：120元起</dd>
+            </dl>
+        </li>
+        <li><span>☆</span><a href="#">杭州极地海洋公园</a>
+            <dl>
+                <dd>AAAA级景区</dd>
+                <dd>地址：浙江省杭州市萧山区湘湖路777号</dd>
+                <dd>价格：205元起</dd>
+            </dl>
+        </li>
+        <li><span>☆</span><a href="#">千岛湖中心湖区</a>
+            <dl>
+                <dd>AAAA级景区</dd>
+                <dd>地址：浙江省淳安县千岛湖区游船码头</dd>
+                <dd>价格：80元起</dd>
+            </dl>
+        </li>
+    </ul>
+</nav>
+
+</body>
+</html>

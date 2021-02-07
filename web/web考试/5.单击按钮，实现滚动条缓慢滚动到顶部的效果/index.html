@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>返回顶部</title>
+	<style>
+      *{
+      	padding: 0px;
+      	margin: 0px;
+      }
+      /*解决IE6下拉滚动条的时候返回顶部图片抖动*/
+      html{
+      	background: url(about:blank) fixed; 
+      }
+      .box{
+      	margin: 0 auto;
+      	width: 1007px;	
+      }
+      .back{
+      	display: none;
+      	width: 57px;
+      	height: 57px;
+      	background: url(images/back.png) no-repeat;
+      	position: fixed;
+      	/*用百分比，网页缩小后位置仍然对*/
+			right: 10%;
+			bottom: 50px;
+		
+		/*解决IE6中定位不对*/
+		_position:absolute;
+		_right: 10%;
+		_top: expression(document.documentElement.clientHeight-this.offsetHeight-50+document.documentElement.scrollTop);
+      }
+      .back:hover{
+      	background: url(images/back2.png) no-repeat;
+      }
+
+	</style>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+        $(function(){
+
+        	var back=$('.back');
+        	back.click(function(){
+        		// 返回顶部，但是下拉滚动条后，自动下移
+     //                   setInterval(function(){
+					// $(window).scrollTop($(window).scrollTop()-50);
+     //    	},200);
+        	// 解决自动下移，当scrollTop为0的时候timer清零
+        	var timer = setInterval(function(){
+					$(window).scrollTop($(window).scrollTop()-50);
+					if($(window).scrollTop() == 0){
+						clearInterval(timer);
+					}
+				},200);
+           });
+         // 设置拉动滚动条事件，如果下拉滚动条大于100px就显示出返回顶部图片，
+         //同时在CSS中设置display: none;
+
+        	$(window).scroll(function() {
+				if($(window).scrollTop() < 100){
+					back.hide(500);
+				} else {
+					back.show(500);
+				}
+			});
+        })
+	</script>
+	
+         
+	
+</head>
+<body>
+	<div class="box">
+		<img src="images/vancl.png" alt="">
+	</div>
+	<div class="back"></div>
+	
+</body>
+</html>

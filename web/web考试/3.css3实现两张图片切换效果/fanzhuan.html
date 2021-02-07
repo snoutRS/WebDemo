@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>翻转效果</title>
+	<style>
+	  *{
+	  	padding: 0;
+	  	margin: 0;
+	  }
+	  div{
+	  	width: 150px;
+	  	height: 150px;
+	  	border-radius: 50%;
+	  	margin:0 auto;
+	  	overflow: hidden;
+	  	position: relative;	  	
+	  /*	border: 1px solid blue;*/
+	  }
+
+	  div img{
+	  	width: 150px;
+	  	position: absolute;
+	  	top: 0;
+	  	left: 0;
+	  	transition:all 1s;
+	  }
+	  div img:nth-child(1){
+	  	z-index: 1;
+	  	backface-visibility: hidden;
+	  	/*不是正面对向屏幕，就隐藏*/
+	  }
+	  div img:nth-child(2){
+	  	transform:rotateY(180deg);
+	  }
+	  div:hover img:nth-child(1){
+	  	transform:rotateY(180deg);
+	  }
+	  div:hover img:nth-child(2){
+	  	transform:rotateY(0deg);
+	  }
+    </style>
+</head>
+<body>
+	<div>
+	   <img src="images/a.jpg" alt="">
+	   <img src="images/b.jpg" alt="">
+	</div>
+</body>
+</html>

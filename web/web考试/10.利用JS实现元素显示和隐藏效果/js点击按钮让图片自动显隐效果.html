@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style>
+      #dan{
+      	position: absolute;
+      	top: 50px;
+      }
+    </style>
+	<script type="text/javascript">
+		
+	window.onload = function(){
+      //抓元素
+      var btn = document.getElementById('btn');
+      var dan = document.getElementById('dan');
+      var sta = 1;//设置图片显示时候的状态 1对应图片的显示状态 2对应隐藏状态
+      //给按钮加单击事件
+		btn.onclick = function(){
+		 // 判断当前sta表示的图片状态
+		if (sta === 1) {//现在处在显示状态
+			//让图片隐藏
+		     dan.style.display = 'none';
+		     sta = 2;
+	    } else if (sta === 2) {
+	          dan.style.display = 'block';
+		      sta = 1;
+	    }
+      
+		}
+	}
+		
+	</script>
+	</head>
+	<body>
+	<input type="button" value="点击我" id="btn"/><br /><br />
+    <img src="images/dan.gif" id="dan" style="left: 0px;" />
+	</body>
+</html>
