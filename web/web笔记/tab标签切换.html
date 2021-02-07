@@ -1,0 +1,16 @@
+<script type="text/javascript">
+	window.onload = function(){
+		var tab = document.getElementById('tab');
+		var lis = tab.getElementsByTagName('li');
+		var cons = tab.getElementsByClassName('con');
+		for (var i=0;i<lis.length;i++) {
+			lis[i].xuhao = i;
+			lis[i].onmouseover = function(){
+				for (var i=0;i<cons.length;i++) {
+					cons[i].style.display = 'none';
+				}
+				cons[this.xuhao].style.display = 'block';
+			}
+		}
+	}
+</script>
