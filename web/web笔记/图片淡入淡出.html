@@ -1,0 +1,27 @@
+</script>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+     $(function(){
+       var c=0;
+       function run(){
+        	c++;
+        	c=(c==5)?0:c;
+          $('#fk ul li').eq(c).css({'background':'#A10000'}).siblings('li').css({'background':'black'});
+          $("#fk img").eq(c).fadeIn(500).siblings('img').fadeOut(500);
+        };
+       var timer = setInterval(run,1000);
+        $('#fk ul li').mouseenter(function(){
+        	var jqthis = $(this);
+        	clearInterval(timer);
+        	tt = setTimeout(function(){
+        	c = jqthis.index();
+          $('#fk ul li').eq(c).css({'background':'#A10000'}).siblings('li').css({'background':'black'});
+          $("#fk img").eq(c).stop().fadeIn(500).siblings('img').stop().fadeOut(500);	
+        	},200);
+        });
+        $('#fk ul li').mouseleave(function(){
+        	clearTimeout(tt);
+           timer = setInterval(run,1000);
+        });
+     })
+	</script>
